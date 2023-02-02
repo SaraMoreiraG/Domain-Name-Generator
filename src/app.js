@@ -8,17 +8,16 @@ import "./assets/img/4geeks.ico";
 window.onload = function() {
   //write your code here
   function domainNameGenerator() {
-    let pronoun = ["the", "our", "mine", "your"];
-    let adj = ["great", "big", "small", "pretty"];
-    let noun = ["jogger", "racoon", "elephant", "door"];
-
-    let pronounNumber = Math.floor(Math.random() * 4);
-    let adjNumber = Math.floor(Math.random() * 4);
-    let nounNumber = Math.floor(Math.random() * 4);
-
-    let domainName =
-      pronoun[pronounNumber] + adj[adjNumber] + noun[nounNumber] + ".com";
-    return domainName;
+    let pronoun = ["the", "our"];
+    let adj = ["great", "big"];
+    let noun = ["jogger", "racoon"];
+    for (let i = 0; i < pronoun.length; i++) {
+      for (let j = 0; j < adj.length; j++) {
+        for (let k = 0; k < noun.length; k++) {
+          console.log(pronoun[i] + adj[j] + noun[k] + ".com");
+        }
+      }
+    }
   }
-  console.log(domainNameGenerator());
+  domainNameGenerator();
 };
